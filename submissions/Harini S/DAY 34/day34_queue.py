@@ -1,7 +1,7 @@
-class Queue_new:
+class Queue:
     def __init__(self,size):
         self.size=size
-        self.Queue_new=[None]*size
+        self.queue=[None]*size
         self.front=-1
         self.rear=-1
     def enqueue(self,value):
@@ -9,7 +9,7 @@ class Queue_new:
             if self.front==-1:
                 self.front=0
             self.rear+=1
-            self.Queue_new[self.rear]=value
+            self.queue[self.rear]=value
         else:
             print("Queue overflow")
     
@@ -17,17 +17,17 @@ class Queue_new:
         if self.front==-1 or self.front>self.rear:
             print("Queue underflow")
         else:
-            self.Queue_new[self.front]=None
+            self.queue[self.front]=None
             self.front+=1
     
     def display(self):
         if self.front==-1 or self.front>self.rear: print("Queue underflow")
         else:
-            for i in self.Queue_new[self.front:self.rear+1]: print(i,end=" ")
+            for i in self.queue[self.front:self.rear+1]: print(i,end=" ")
 lis=list(map(int,input("Input: ").split()))
 deq=int(input("Dequeue: "))
-q=Queue_new(len(lis))
+q=Queue(len(lis))
 for i in lis: q.enqueue(i)
 for i in range(deq): q.dequeue()
-print("Remaining Queue:",end=" ")
-q.display()       
+print("Remaining queue:",end=" ")
+q.display()
