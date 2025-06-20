@@ -6,17 +6,17 @@ class node:
 def binarytree(values):
     if not values:
         return None
-    New_Nodes=[node(val) for val in values]
-    root=New_Nodes[0]
+    Nodes=[node(val) for val in values]
+    root=Nodes[0]
     i=0 #parent index
     j=1 #child index
     while j<len(values):
-        if i<len(New_Nodes):
-            if j<len(New_Nodes):
-                New_Nodes[i].left=New_Nodes[j]
+        if i<len(Nodes):
+            if j<len(Nodes):
+                Nodes[i].left=Nodes[j]
                 j+=1
-            if j<len(New_Nodes):
-                New_Nodes[i].right=New_Nodes[j]
+            if j<len(Nodes):
+                Nodes[i].right=Nodes[j]
                 j+=1
         i+=1
     return root
